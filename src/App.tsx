@@ -275,9 +275,9 @@ export default function App() {
           </p>
           <a
             href="#games"
-            className="flex items-center justify-center gap-3 rounded-full font-bold text-[#071B33] transition-all duration-300 hover:scale-105 hover:brightness-110 shadow-lg no-underline"
+            className="flex items-center justify-center gap-3 rounded-full font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-blue shadow-lg no-underline"
             style={{
-              background: "linear-gradient(135deg, #FFC400, #FF9500)",
+              background: "linear-gradient(135deg, #0E66C1, #28A9FF)",
               padding: "20px 56px",
               fontSize: "clamp(1.125rem, 2.5vw, 1.375rem)",
               minHeight: "64px",
