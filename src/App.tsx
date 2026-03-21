@@ -147,7 +147,7 @@ function StoreBadges({
 }) {
   const w = size === "cta" ? "w-[180px]" : "w-[155px]";
   return (
-    <div className="flex flex-wrap items-center gap-3">
+    <div className="flex flex-wrap items-center justify-center gap-3">
       <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
         <img
           src="/assets/badges/app-store-badge.svg"
@@ -463,7 +463,7 @@ export default function App() {
               Our Story
             </h2>
 
-            <div className="bg-[#0C2444]/80 backdrop-blur-sm rounded-3xl p-8 sm:p-12 border border-[#1A3A5C]/50">
+            <div className="bg-[#0C2444]/80 backdrop-blur-sm rounded-3xl px-6 py-8 sm:p-12 border border-[#1A3A5C]/50">
               <div className="max-w-2xl mx-auto">
                 <p className="text-[#8BB8D9] text-lg leading-relaxed mb-6">
                   You know how you always hear how game studios started in a garage? Well, we're
@@ -478,7 +478,7 @@ export default function App() {
                 </p>
 
                 {/* Mission */}
-                <div className="border-l-4 border-[#FFC400] pl-6 py-2">
+                <div className="border-l-4 border-[#FFC400] pl-4 sm:pl-6 py-2">
                   <p className="font-display text-2xl sm:text-3xl tracking-wider text-[#FFC400]">
                     Our Mission
                   </p>
