@@ -227,9 +227,9 @@ function HeroSlideshow() {
           }}
         />
       ))}
-      {/* Heavy overlay to dim screenshots */}
-      <div className="absolute inset-0 bg-[#071B33]/75" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#071B33]/60 via-transparent to-[#071B33]/90" />
+      {/* Overlay to dim screenshots — light enough to see the action */}
+      <div className="absolute inset-0 bg-[#071B33]/55" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#071B33]/40 via-transparent to-[#071B33]/80" />
     </div>
   );
 }
@@ -258,42 +258,32 @@ export default function App() {
             alt="Big Idea Games"
             className="mx-auto w-[220px] sm:w-[320px] lg:w-[420px] drop-shadow-2xl"
           />
-          <h1 className="font-display text-[clamp(1.75rem,6vw,3.75rem)] tracking-wider text-[#EAF6FF] leading-[1.1]">
+          <h1
+            className="font-display text-[clamp(1.75rem,6vw,3.75rem)] tracking-wider text-white leading-[1.1]"
+            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4)" }}
+          >
             Creating the Best
             <br className="sm:hidden" />
             {" "}Mobile{" "}
             <span className="whitespace-nowrap">Sports Games</span>
           </h1>
-          <p className="font-sans text-base sm:text-lg lg:text-xl text-[#B0CDE0] max-w-lg sm:max-w-2xl mx-auto leading-relaxed">
+          <p
+            className="font-sans text-base sm:text-lg lg:text-xl text-[#D4E8F5] max-w-lg sm:max-w-2xl mx-auto leading-relaxed"
+            style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+          >
             Built with passion. Played by millions.
           </p>
           <a
             href="#games"
-            className="inline-flex items-center gap-2.5 rounded-full px-10 py-4 text-base sm:text-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-blue min-h-[48px]"
-            style={{ background: "var(--gradient-blue)" }}
+            className="inline-flex items-center gap-2.5 rounded-full px-10 py-4 text-base sm:text-lg font-bold text-[#071B33] transition-all duration-300 hover:scale-105 hover:brightness-110 min-h-[48px] shadow-lg"
+            style={{ background: "linear-gradient(135deg, #FFC400, #FF9500)" }}
           >
             <Smartphone className="h-5 w-5 shrink-0" />
             See Our Games
           </a>
         </div>
 
-        {/* Floating player renders - decorative */}
-        <div className="absolute bottom-0 left-0 right-0 hidden lg:flex justify-between items-end px-8 pointer-events-none">
-          <img
-            src={HOCKEY_PLAYERS[0]}
-            alt=""
-            loading="lazy"
-            className="h-[260px] opacity-30 drop-shadow-2xl"
-            style={{ animation: "float 4s ease-in-out infinite" }}
-          />
-          <img
-            src={HOCKEY_PLAYERS[2]}
-            alt=""
-            loading="lazy"
-            className="h-[280px] opacity-25 drop-shadow-2xl"
-            style={{ animation: "float 4s ease-in-out infinite 1s" }}
-          />
-        </div>
+        {/* Floating players removed — slideshow provides the visual interest */}
 
         {/* Scroll indicator */}
         <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
