@@ -223,7 +223,7 @@ function HeroSlideshow() {
           style={{
             opacity: i === current ? 1 : 0,
             transform: "scale(1.3)",
-            filter: "blur(6px)",
+            filter: "blur(2px)",
           }}
         />
       ))}
