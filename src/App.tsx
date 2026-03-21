@@ -363,17 +363,19 @@ export default function App() {
                 make it easy to learn, hard to master.
               </p>
 
+              {/* Store badges */}
+              <div className="mb-8">
+                <StoreBadges
+                  appStoreUrl="https://apps.apple.com/us/app/superstar-hockey/id1556321339"
+                  googlePlayUrl="https://play.google.com/store/apps/details?id=com.bigideagames.googleplay.superhockey"
+                  size="cta"
+                />
+              </div>
+
               {/* Screenshots */}
               <div className="mb-8">
                 <ScreenshotCarousel screenshots={HOCKEY_SCREENSHOTS} accent="blue" />
               </div>
-
-              {/* Store badges */}
-              <StoreBadges
-                appStoreUrl="https://apps.apple.com/us/app/superstar-hockey/id1556321339"
-                googlePlayUrl="https://play.google.com/store/apps/details?id=com.bigideagames.googleplay.superhockey"
-                size="cta"
-              />
 
               {/* Decorative player renders */}
               <div className="hidden xl:block absolute right-8 bottom-8 pointer-events-none">
@@ -431,17 +433,19 @@ export default function App() {
                 keeps you coming back.
               </p>
 
+              {/* Store badges */}
+              <div className="mb-8">
+                <StoreBadges
+                  appStoreUrl="https://apps.apple.com/us/app/superstar-soccer/id6450317114"
+                  googlePlayUrl="https://play.google.com/store/apps/details?id=com.bigideagames.googleplay.supersoccer"
+                  size="cta"
+                />
+              </div>
+
               {/* Screenshots */}
               <div className="mb-8">
                 <ScreenshotCarousel screenshots={SOCCER_SCREENSHOTS} accent="green" />
               </div>
-
-              {/* Store badges */}
-              <StoreBadges
-                appStoreUrl="https://apps.apple.com/us/app/superstar-soccer/id6450317114"
-                googlePlayUrl="https://play.google.com/store/apps/details?id=com.bigideagames.googleplay.supersoccer"
-                size="cta"
-              />
             </div>
           </div>
         </div>
