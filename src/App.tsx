@@ -275,8 +275,16 @@ export default function App() {
           </p>
           <a
             href="#games"
-            className="inline-flex items-center justify-center gap-3 rounded-full px-12 sm:px-14 py-5 sm:py-6 text-lg sm:text-xl font-bold text-[#071B33] transition-all duration-300 hover:scale-105 hover:brightness-110 shadow-lg leading-none"
-            style={{ background: "linear-gradient(135deg, #FFC400, #FF9500)" }}
+            className="flex items-center justify-center gap-3 rounded-full font-bold text-[#071B33] transition-all duration-300 hover:scale-105 hover:brightness-110 shadow-lg no-underline"
+            style={{
+              background: "linear-gradient(135deg, #FFC400, #FF9500)",
+              padding: "20px 56px",
+              fontSize: "clamp(1.125rem, 2.5vw, 1.375rem)",
+              minHeight: "64px",
+              minWidth: "280px",
+              lineHeight: 1,
+              boxSizing: "border-box",
+            }}
           >
             <Smartphone className="h-6 w-6 shrink-0" />
             <span>See Our Games</span>
