@@ -275,11 +275,11 @@ export default function App() {
           </p>
           <a
             href="#games"
-            className="inline-flex items-center gap-2.5 rounded-full px-10 py-4 text-base sm:text-lg font-bold text-[#071B33] transition-all duration-300 hover:scale-105 hover:brightness-110 min-h-[48px] shadow-lg"
+            className="inline-flex items-center justify-center gap-3 rounded-full px-12 sm:px-14 py-5 sm:py-6 text-lg sm:text-xl font-bold text-[#071B33] transition-all duration-300 hover:scale-105 hover:brightness-110 shadow-lg leading-none"
             style={{ background: "linear-gradient(135deg, #FFC400, #FF9500)" }}
           >
-            <Smartphone className="h-5 w-5 shrink-0" />
-            See Our Games
+            <Smartphone className="h-6 w-6 shrink-0" />
+            <span>See Our Games</span>
           </a>
         </div>
 
