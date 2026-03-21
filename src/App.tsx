@@ -256,7 +256,7 @@ export default function App() {
           <img
             src="/assets/hockey/logos/BIG Logo - Transparent on Dark - Final.webp"
             alt="Big Idea Games"
-            className="mx-auto w-[220px] sm:w-[320px] lg:w-[420px] drop-shadow-2xl"
+            className="mx-auto w-[385px] sm:w-[560px] lg:w-[735px] drop-shadow-2xl"
           />
           <h1
             className="font-display text-[clamp(1.75rem,6vw,3.75rem)] tracking-wider text-white leading-[1.1]"
