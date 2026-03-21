@@ -351,7 +351,7 @@ export default function App() {
 
                 <div className="flex flex-wrap gap-3">
                   <StatPill icon={<Star className="h-4 w-4" />} text="4.8★ App Store" />
-                  <StatPill icon={<Download className="h-4 w-4" />} text="1M+ Downloads" />
+                  <StatPill icon={<Download className="h-4 w-4" />} text="2M+ Downloads" />
                   <StatPill icon={<Smartphone className="h-4 w-4" />} text="Free" />
                 </div>
               </div>
@@ -402,17 +402,11 @@ export default function App() {
               {/* Header row */}
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 gap-4 sm:gap-6">
                 <div className="flex items-center gap-4 sm:gap-6">
-                  {/* Text-based logo since no logo file */}
-                  <div className="w-[72px] sm:w-[120px] h-[72px] sm:h-[120px] rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#22C55E] to-[#16A34A] flex items-center justify-center shadow-card flex-shrink-0">
-                    <div className="text-center">
-                      <div className="font-display text-lg sm:text-2xl text-white tracking-wider leading-none">
-                        ⚽
-                      </div>
-                      <div className="font-display text-[9px] sm:text-xs text-white/90 tracking-wider leading-tight mt-1">
-                        SUPERSTAR<br/>SOCCER
-                      </div>
-                    </div>
-                  </div>
+                  <img
+                    src="/assets/soccer/soccer-icon.png"
+                    alt="Superstar Soccer"
+                    className="w-[72px] sm:w-[120px] h-[72px] sm:h-[120px] rounded-xl sm:rounded-2xl shadow-card flex-shrink-0"
+                  />
                   <div>
                     <h3 className="font-display text-2xl sm:text-4xl tracking-wider text-[#EAF6FF]">
                       Superstar Soccer
@@ -503,7 +497,7 @@ export default function App() {
                     <div className="text-[#5A8AAF] text-sm mt-1">Games</div>
                   </div>
                   <div className="text-center">
-                    <div className="font-display text-4xl text-[#28A9FF]">1M+</div>
+                    <div className="font-display text-4xl text-[#28A9FF]">2M+</div>
                     <div className="text-[#5A8AAF] text-sm mt-1">Downloads</div>
                   </div>
                   <div className="text-center">
