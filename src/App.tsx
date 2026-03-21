@@ -217,7 +217,7 @@ export default function App() {
             <span className="whitespace-nowrap">Sports Games</span>
           </h1>
           <p className="font-sans text-base sm:text-lg lg:text-xl text-[#B0CDE0] max-w-lg sm:max-w-2xl mx-auto leading-relaxed">
-            Born during the pandemic. Built with passion. Played by millions.
+            Built with passion. Played by millions.
           </p>
           <a
             href="#games"
@@ -427,8 +427,8 @@ export default function App() {
               <div className="max-w-2xl mx-auto">
                 <p className="text-[#8BB8D9] text-lg leading-relaxed mb-6">
                   You know how you always hear how game studios started in a garage? Well, we're
-                  not too far from that! Ours started at home while locked down during the
-                  pandemic of 2020!
+                  not too far from that! Ours started at home in 2020 with a dream and a lot of
+                  late nights.
                 </p>
                 <p className="text-[#8BB8D9] text-lg leading-relaxed mb-8">
                   Remote working was a thing and we'd always had a dream to one day develop our
