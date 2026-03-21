@@ -222,7 +222,7 @@ function HeroSlideshow() {
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out"
           style={{
             opacity: i === current ? 1 : 0,
-            transform: "scale(1.3)",
+            transform: "scale(1)",
             filter: "blur(2px)",
           }}
         />
