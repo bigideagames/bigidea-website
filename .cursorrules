@@ -1,0 +1,67 @@
+# Cursor Rules — Big Idea Games Webapp Starter
+
+## Tech Stack
+- React 19 + TypeScript (strict mode)
+- Vite for bundling
+- Tailwind CSS v4 (CSS-first config)
+- shadcn/ui for UI components
+- Lucide React for icons
+
+## Code Standards
+
+### TypeScript
+- Use TypeScript strictly — no `any`, no `as` casts unless truly necessary
+- Prefer `interface` for object shapes, `type` for unions/intersections
+- Use `const` assertions where applicable
+- Export types alongside components when they're part of the public API
+
+### Components
+- One component per file, PascalCase naming (e.g., `PlayerCard.tsx`)
+- Keep components small and composable (< 150 lines ideal)
+- Use shadcn/ui components — don't reinvent buttons, cards, inputs, etc.
+- Import from `@/components/ui/` for shadcn components
+- Put app-specific components in `@/components/`
+
+### Styling
+- Use Tailwind utility classes exclusively — no custom CSS unless absolutely necessary
+- Follow the design token system — **never hardcode colors, spacing, or sizes**
+- Use CSS custom properties from `src/styles/globals.css` for theming
+- Reference semantic colors: `bg-background`, `text-foreground`, `bg-surface`, `border-border`, etc.
+- For accent colors, use `var(--accent-primary)`, `var(--accent-secondary)`, etc.
+- Responsive: mobile-first approach using Tailwind breakpoints (`sm:`, `md:`, `lg:`)
+- Dark mode is default; light mode uses `.light` class on root
+
+### Design Token Colors (defined in globals.css)
+```
+--accent-primary    → lime (wins, primary stats)
+--accent-secondary  → cyan (high priority)
+--accent-tertiary   → blue (lower priority)
+--accent-alert      → yellow (live states, alerts)
+--accent-danger     → red (errors, losses)
+```
+
+### Patterns
+- No magic strings — use constants or enums
+- Use the `cn()` utility from `@/lib/utils` for conditional classes
+- Prefer named exports for components
+- Keep state minimal and close to where it's used
+- Use `import type` for type-only imports
+
+### File Organization
+```
+src/
+├── components/     → App-specific components
+│   └── ui/         → shadcn/ui (don't edit manually)
+├── lib/            → Utilities, helpers, constants
+├── styles/         → Global CSS, design tokens
+├── App.tsx         → Main app component
+└── main.tsx        → Entry point
+```
+
+### Don'ts
+- Don't use inline styles (use Tailwind)
+- Don't create new CSS files (use Tailwind utilities)
+- Don't hardcode hex colors (use design tokens)
+- Don't install new UI component libraries (use shadcn/ui)
+- Don't use `React.FC` — use plain function declarations
+- Don't use default exports for non-page components

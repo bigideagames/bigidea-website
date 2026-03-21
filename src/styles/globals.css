@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+/*
+ * =================================================================
+ * BIG IDEA GAMES — Brand Design Tokens
+ * =================================================================
+ */
+
+/* ---------- Custom Font Faces ---------- */
+@font-face {
+  font-family: "Bebas";
+  src: url("/fonts/Bebas-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "AlfaSlab";
+  src: url("/fonts/AlfaSlabOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@theme {
+  /* ---------- Typography ---------- */
+  --font-sans: "Oswald", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bebas", ui-sans-serif, system-ui, sans-serif;
+  --font-data: "AlfaSlab", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---------- Border Radius ---------- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* ---------- Shadows ---------- */
+  --shadow-card: 0 2px 8px 0 rgb(0 0 0 / 0.4);
+  --shadow-card-hover: 0 12px 24px -4px rgb(0 0 0 / 0.5);
+  --shadow-glow-blue: 0 0 30px rgb(14 102 193 / 0.4);
+  --shadow-glow-yellow: 0 0 30px rgb(255 196 0 / 0.4);
+  --shadow-glow-green: 0 0 30px rgb(34 197 94 / 0.4);
+
+  /* ---------- Animations ---------- */
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.6s ease-out;
+  --animate-slide-in-right: slide-in-right 0.5s ease-out;
+
+  /* ---------- Colors: Semantic Palette ---------- */
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--fg-primary);
+  --color-surface: var(--bg-secondary);
+  --color-surface-foreground: var(--fg-primary);
+  --color-muted: var(--bg-muted);
+  --color-muted-foreground: var(--fg-muted);
+  --color-border: var(--border-default);
+  --color-ring: var(--accent-primary);
+  --color-primary: var(--accent-primary);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--bg-secondary);
+  --color-secondary-foreground: var(--fg-primary);
+  --color-accent: var(--bg-muted);
+  --color-accent-foreground: var(--fg-primary);
+  --color-destructive: var(--accent-danger);
+  --color-destructive-foreground: #ffffff;
+  --color-input: var(--border-default);
+  --color-popover: var(--bg-secondary);
+  --color-popover-foreground: var(--fg-primary);
+  --color-card: var(--bg-secondary);
+  --color-card-foreground: var(--fg-primary);
+}
+
+:root {
+  /* Big Idea Games Brand Palette */
+  --bg-primary: #071B33;       /* Deep navy */
+  --bg-secondary: #0C2444;     /* Slightly lighter navy */
+  --bg-muted: #143058;         /* Muted navy */
+
+  --fg-primary: #EAF6FF;       /* Ice white */
+  --fg-secondary: #8BB8D9;     /* Muted blue */
+  --fg-muted: #5A8AAF;         /* Faded blue */
+
+  --border-default: #1A3A5C;
+
+  /* Brand accents */
+  --accent-primary: #0E66C1;   /* Brand blue */
+  --accent-secondary: #28A9FF; /* Bright blue */
+  --accent-tertiary: #FFC400;  /* Yellow accent */
+  --accent-alert: #FFC400;     /* Yellow */
+  --accent-danger: #ef4444;    /* Red */
+
+  /* Gradients */
+  --gradient-blue: linear-gradient(135deg, #0E66C1, #28A9FF);
+  --gradient-gold: linear-gradient(135deg, #FFC400, #FF9500);
+
+  /* Soccer green accent */
+  --soccer-primary: #22C55E;
+  --soccer-secondary: #16A34A;
+  --soccer-bg: #0A2E1A;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ---------- Base Styles ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--fg-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ---------- Utility classes ---------- */
+.text-gradient-blue {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Screenshot carousel scrollbar hide */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

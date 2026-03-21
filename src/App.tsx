@@ -1,0 +1,523 @@
+import { useEffect, useRef, useState, useCallback } from "react";
+import { ChevronLeft, ChevronRight, Star, Download, Smartphone, Mail } from "lucide-react";
+
+/* ──────────────────────────────────────────────
+   Data
+   ────────────────────────────────────────────── */
+
+const HOCKEY_SCREENSHOTS = [
+  "/assets/hockey/screenshots/screenshot001_1290x2796.webp",
+  "/assets/hockey/screenshots/screenshot002_1290x2796.webp",
+  "/assets/hockey/screenshots/screenshot003_1290x2796.webp",
+  "/assets/hockey/screenshots/screenshot004_1290x2796.webp",
+  "/assets/hockey/screenshots/screenshot006_1290x2796.webp",
+  "/assets/hockey/screenshots/screenshot007_1290x2796.webp",
+];
+
+const SOCCER_SCREENSHOTS = [
+  "/assets/soccer/soccer_A.webp",
+  "/assets/soccer/soccer_B.webp",
+  "/assets/soccer/soccer_C.webp",
+  "/assets/soccer/soccer_D.webp",
+  "/assets/soccer/soccer_E.webp",
+  "/assets/soccer/soccer_F.webp",
+];
+
+const HOCKEY_PLAYERS = [
+  "/assets/hockey/players/player_bf_burns.webp",
+  "/assets/hockey/players/player_cup.webp",
+  "/assets/hockey/players/player_gourdain.webp",
+  "/assets/hockey/players/player_krejci.webp",
+  "/assets/hockey/players/player_weight.webp",
+];
+
+/* ──────────────────────────────────────────────
+   Intersection Observer Hook
+   ────────────────────────────────────────────── */
+
+function useReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry?.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return { ref, visible };
+}
+
+/* ──────────────────────────────────────────────
+   Screenshot Carousel
+   ────────────────────────────────────────────── */
+
+function ScreenshotCarousel({ screenshots, accent = "blue" }: { screenshots: string[]; accent?: "blue" | "green" }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 10);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", checkScroll, { passive: true });
+    checkScroll();
+    return () => el.removeEventListener("scroll", checkScroll);
+  }, [checkScroll]);
+
+  const scroll = (dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const amount = el.clientWidth * 0.6;
+    el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+  };
+
+  const btnColor = accent === "green"
+    ? "bg-[#22C55E]/90 hover:bg-[#22C55E]"
+    : "bg-[#0E66C1]/90 hover:bg-[#0E66C1]";
+
+  return (
+    <div className="relative group">
+      {canScrollLeft && (
+        <button
+          onClick={() => scroll("left")}
+          className={`absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full ${btnColor} p-2 text-white shadow-lg opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer`}
+          aria-label="Scroll left"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+      )}
+      {canScrollRight && (
+        <button
+          onClick={() => scroll("right")}
+          className={`absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full ${btnColor} p-2 text-white shadow-lg opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer`}
+          aria-label="Scroll right"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+      )}
+      <div
+        ref={scrollRef}
+        className="flex gap-4 overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-4 px-1"
+      >
+        {screenshots.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Screenshot ${i + 1}`}
+            loading="lazy"
+            className="h-[360px] sm:h-[420px] w-auto rounded-xl shadow-card snap-center flex-shrink-0 hover:scale-[1.02] transition-transform duration-300"
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ──────────────────────────────────────────────
+   Store Badges
+   ────────────────────────────────────────────── */
+
+function StoreBadges({
+  appStoreUrl,
+  googlePlayUrl,
+  size = "inline",
+}: {
+  appStoreUrl: string;
+  googlePlayUrl: string;
+  size?: "inline" | "cta";
+}) {
+  const w = size === "cta" ? "w-[180px]" : "w-[155px]";
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
+        <img
+          src="/assets/badges/app-store-badge.svg"
+          alt="Download on the App Store"
+          className={`${w} h-auto hover:scale-105 transition-transform`}
+        />
+      </a>
+      <a href={googlePlayUrl} target="_blank" rel="noopener noreferrer">
+        <img
+          src="/assets/badges/google-play-badge.png"
+          alt="Get it on Google Play"
+          className={`${w} h-auto hover:scale-105 transition-transform`}
+        />
+      </a>
+    </div>
+  );
+}
+
+/* ──────────────────────────────────────────────
+   Stat Pill
+   ────────────────────────────────────────────── */
+
+function StatPill({ icon, text, accent = "blue" }: { icon: React.ReactNode; text: string; accent?: "blue" | "green" }) {
+  const bg = accent === "green" ? "bg-[#22C55E]/15 text-[#4ADE80]" : "bg-[#0E66C1]/15 text-[#28A9FF]";
+  return (
+    <div className={`inline-flex items-center gap-2 rounded-full px-4 py-2 ${bg} text-sm font-semibold`}>
+      {icon}
+      {text}
+    </div>
+  );
+}
+
+/* ──────────────────────────────────────────────
+   Main App
+   ────────────────────────────────────────────── */
+
+export default function App() {
+  const heroReveal = useReveal();
+  const gamesReveal = useReveal();
+  const soccerReveal = useReveal();
+  const aboutReveal = useReveal();
+
+  return (
+    <div className="min-h-screen bg-[var(--bg-primary)]">
+      {/* ──── HERO ──── */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Background gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#071B33] via-[#0C2444] to-[#071B33]" />
+        {/* Subtle radial glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(14,102,193,0.15)_0%,_transparent_70%)]" />
+
+        <div
+          ref={heroReveal.ref}
+          className={`relative z-10 text-center px-6 max-w-4xl mx-auto transition-all duration-1000 ${
+            heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <img
+            src="/assets/hockey/logos/BIG Logo - Transparent on Dark - Final.webp"
+            alt="Big Idea Games"
+            className="mx-auto mb-8 w-[280px] sm:w-[360px] lg:w-[420px] drop-shadow-2xl"
+          />
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl tracking-wider text-[#EAF6FF] mb-4">
+            Creating the Best Mobile Sports Games
+          </h1>
+          <p className="font-sans text-lg sm:text-xl text-[#8BB8D9] font-light max-w-2xl mx-auto mb-10">
+            Born during the pandemic. Built with passion. Played by millions.
+          </p>
+          <a
+            href="#games"
+            className="inline-flex items-center gap-2 rounded-full px-8 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-blue"
+            style={{ background: "var(--gradient-blue)" }}
+          >
+            <Smartphone className="h-5 w-5" />
+            See Our Games
+          </a>
+        </div>
+
+        {/* Floating player renders - decorative */}
+        <div className="absolute bottom-0 left-0 right-0 hidden lg:flex justify-between items-end px-8 pointer-events-none">
+          <img
+            src={HOCKEY_PLAYERS[0]}
+            alt=""
+            className="h-[260px] opacity-30 drop-shadow-2xl"
+            style={{ animation: "float 4s ease-in-out infinite" }}
+          />
+          <img
+            src={HOCKEY_PLAYERS[2]}
+            alt=""
+            className="h-[280px] opacity-25 drop-shadow-2xl"
+            style={{ animation: "float 4s ease-in-out infinite 1s" }}
+          />
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 rounded-full border-2 border-[#8BB8D9]/40 flex items-start justify-center p-1.5">
+            <div className="w-1.5 h-3 rounded-full bg-[#28A9FF] animate-pulse" />
+          </div>
+        </div>
+      </section>
+
+      {/* ──── OUR GAMES ──── */}
+      <section id="games" className="py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-wider text-center text-[#EAF6FF] mb-4">
+            Our Games
+          </h2>
+          <p className="text-center text-[#8BB8D9] mb-16 max-w-xl mx-auto">
+            Pick up and play sports action. Quick matches, deep progression, pure fun.
+          </p>
+
+          {/* ── SUPERSTAR HOCKEY ── */}
+          <div
+            ref={gamesReveal.ref}
+            className={`relative rounded-3xl overflow-hidden mb-20 transition-all duration-1000 ${
+              gamesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+            }`}
+          >
+            {/* Background */}
+            <div className="absolute inset-0">
+              <img
+                src="/assets/hockey/backgrounds/arena_bg_1024.webp"
+                alt=""
+                className="w-full h-full object-cover opacity-30"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#071B33] via-[#071B33]/90 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071B33] via-transparent to-[#071B33]/60" />
+            </div>
+
+            <div className="relative z-10 p-8 sm:p-12 lg:p-16">
+              {/* Header row */}
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 gap-6">
+                <div className="flex items-center gap-6">
+                  <img
+                    src="/assets/hockey/logos/SuperstarHockey-Logo-2048x2048.webp"
+                    alt="Superstar Hockey"
+                    className="w-[90px] sm:w-[120px] h-auto rounded-2xl shadow-card"
+                  />
+                  <div>
+                    <h3 className="font-display text-3xl sm:text-4xl tracking-wider text-[#EAF6FF]">
+                      Superstar Hockey
+                    </h3>
+                    <p className="text-[#28A9FF] font-semibold text-sm uppercase tracking-widest mt-1">
+                      Flagship Title
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  <StatPill icon={<Star className="h-4 w-4" />} text="4.8★ App Store" />
+                  <StatPill icon={<Download className="h-4 w-4" />} text="1M+ Downloads" />
+                  <StatPill icon={<Smartphone className="h-4 w-4" />} text="Free" />
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-[#8BB8D9] text-lg max-w-2xl mb-8 leading-relaxed">
+                The ultimate pick-up-and-play hockey experience. Build your dream team,
+                compete in weekly leagues, and collect all-star players. One-touch controls
+                make it easy to learn, hard to master.
+              </p>
+
+              {/* Screenshots */}
+              <div className="mb-8">
+                <ScreenshotCarousel screenshots={HOCKEY_SCREENSHOTS} accent="blue" />
+              </div>
+
+              {/* Store badges */}
+              <StoreBadges
+                appStoreUrl="https://apps.apple.com/us/app/superstar-hockey/id1556321339"
+                googlePlayUrl="https://play.google.com/store/apps/details?id=com.bigideagames.googleplay.superhockey"
+                size="cta"
+              />
+
+              {/* Decorative player renders */}
+              <div className="hidden xl:block absolute right-8 bottom-8 pointer-events-none">
+                <img
+                  src={HOCKEY_PLAYERS[3]}
+                  alt=""
+                  className="h-[240px] opacity-40 drop-shadow-2xl"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* ── SUPERSTAR SOCCER ── */}
+          <div
+            ref={soccerReveal.ref}
+            className={`relative rounded-3xl overflow-hidden transition-all duration-1000 ${
+              soccerReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+            }`}
+          >
+            {/* Background - green themed */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0A2E1A] via-[#0C2444] to-[#071B33]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(34,197,94,0.12)_0%,_transparent_60%)]" />
+
+            <div className="relative z-10 p-8 sm:p-12 lg:p-16">
+              {/* Header row */}
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 gap-6">
+                <div className="flex items-center gap-6">
+                  {/* Text-based logo since no logo file */}
+                  <div className="w-[90px] sm:w-[120px] h-[90px] sm:h-[120px] rounded-2xl bg-gradient-to-br from-[#22C55E] to-[#16A34A] flex items-center justify-center shadow-card flex-shrink-0">
+                    <div className="text-center">
+                      <div className="font-display text-xl sm:text-2xl text-white tracking-wider leading-none">
+                        ⚽
+                      </div>
+                      <div className="font-display text-[10px] sm:text-xs text-white/90 tracking-wider leading-tight mt-1">
+                        SUPERSTAR<br/>SOCCER
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-display text-3xl sm:text-4xl tracking-wider text-[#EAF6FF]">
+                      Superstar Soccer
+                    </h3>
+                    <p className="text-[#4ADE80] font-semibold text-sm uppercase tracking-widest mt-1">
+                      New Release
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-3">
+                  <StatPill icon={<Star className="h-4 w-4" />} text="4.6★ App Store" accent="green" />
+                  <StatPill icon={<Download className="h-4 w-4" />} text="10K+ Downloads" accent="green" />
+                  <StatPill icon={<Smartphone className="h-4 w-4" />} text="Free" accent="green" />
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-[#8BB8D9] text-lg max-w-2xl mb-8 leading-relaxed">
+                Authentic 6v6 soccer action at your fingertips. Pass, shoot, and slide-tackle
+                your way through league mode. Quick matches fit your schedule, deep progression
+                keeps you coming back.
+              </p>
+
+              {/* Screenshots */}
+              <div className="mb-8">
+                <ScreenshotCarousel screenshots={SOCCER_SCREENSHOTS} accent="green" />
+              </div>
+
+              {/* Store badges */}
+              <StoreBadges
+                appStoreUrl="https://apps.apple.com/us/app/superstar-soccer/id6450317114"
+                googlePlayUrl="https://play.google.com/store/apps/details?id=com.bigideagames.googleplay.supersoccer"
+                size="cta"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ──── ABOUT / OUR STORY ──── */}
+      <section id="about" className="py-20 lg:py-28 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#071B33] via-[#0C2444] to-[#071B33]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,196,0,0.06)_0%,_transparent_60%)]" />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
+          <div
+            ref={aboutReveal.ref}
+            className={`transition-all duration-1000 ${
+              aboutReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+            }`}
+          >
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-wider text-center text-[#EAF6FF] mb-12">
+              Our Story
+            </h2>
+
+            <div className="bg-[#0C2444]/80 backdrop-blur-sm rounded-3xl p-8 sm:p-12 border border-[#1A3A5C]/50">
+              <div className="max-w-2xl mx-auto">
+                <p className="text-[#8BB8D9] text-lg leading-relaxed mb-6">
+                  You know how you always hear how game studios started in a garage? Well, we're
+                  not too far from that! Ours started at home while locked down during the
+                  pandemic of 2020!
+                </p>
+                <p className="text-[#8BB8D9] text-lg leading-relaxed mb-8">
+                  Remote working was a thing and we'd always had a dream to one day develop our
+                  own game and branch off on our own. What started as a side project became
+                  something real — a small team with big ideas, building sports games we actually
+                  want to play.
+                </p>
+
+                {/* Mission */}
+                <div className="border-l-4 border-[#FFC400] pl-6 py-2">
+                  <p className="font-display text-2xl sm:text-3xl tracking-wider text-[#FFC400]">
+                    Our Mission
+                  </p>
+                  <p className="text-[#EAF6FF] text-xl mt-2 font-semibold">
+                    To create the best mobile sports games.
+                  </p>
+                </div>
+
+                <div className="mt-10 flex flex-wrap gap-6 justify-center">
+                  <div className="text-center">
+                    <div className="font-display text-4xl text-[#28A9FF]">2020</div>
+                    <div className="text-[#5A8AAF] text-sm mt-1">Founded</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-display text-4xl text-[#28A9FF]">2</div>
+                    <div className="text-[#5A8AAF] text-sm mt-1">Games</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-display text-4xl text-[#28A9FF]">1M+</div>
+                    <div className="text-[#5A8AAF] text-sm mt-1">Downloads</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="font-display text-4xl text-[#FFC400]">∞</div>
+                    <div className="text-[#5A8AAF] text-sm mt-1">Big Ideas</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ──── FOOTER ──── */}
+      <footer className="border-t border-[#1A3A5C] bg-[#050F1D] py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
+            {/* Logo & info */}
+            <div className="flex flex-col items-center md:items-start gap-4">
+              <img
+                src="/assets/hockey/logos/BIG - Icon (white).webp"
+                alt="Big Idea Games"
+                className="w-12 h-auto opacity-80"
+              />
+              <p className="text-[#5A8AAF] text-sm">
+                © 2026 Big Idea Games Inc.
+              </p>
+            </div>
+
+            {/* Links */}
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+              <a
+                href="https://www.bigidea.games/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#8BB8D9] hover:text-[#28A9FF] transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="https://www.bigidea.games/terms-of-service"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#8BB8D9] hover:text-[#28A9FF] transition-colors"
+              >
+                Terms of Service
+              </a>
+              <a
+                href="https://www.bigidea.games/superstarhockeyfaq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#8BB8D9] hover:text-[#28A9FF] transition-colors"
+              >
+                FAQ
+              </a>
+              <a
+                href="mailto:superstarhockey@bigidea.games"
+                className="inline-flex items-center gap-1.5 text-[#8BB8D9] hover:text-[#28A9FF] transition-colors"
+              >
+                <Mail className="h-4 w-4" />
+                Contact
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
