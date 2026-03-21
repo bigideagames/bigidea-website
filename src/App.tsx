@@ -262,7 +262,7 @@ export default function App() {
             className="font-display text-[clamp(1.75rem,6vw,3.75rem)] tracking-wider text-white leading-[1.1]"
             style={{ textShadow: "0 2px 20px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4)" }}
           >
-            Creating the Best
+            Creating the World's Best
             <br className="sm:hidden" />
             {" "}Mobile{" "}
             <span className="whitespace-nowrap">Sports Games</span>
@@ -489,7 +489,7 @@ export default function App() {
                     Our Mission
                   </p>
                   <p className="text-[#EAF6FF] text-xl mt-2 font-semibold">
-                    To create the best mobile sports games.
+                    To create the world's best mobile sports games.
                   </p>
                 </div>
 
