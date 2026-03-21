@@ -193,7 +193,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* ──── HERO ──── */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
         {/* Background gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#071B33] via-[#0C2444] to-[#071B33]" />
         {/* Subtle radial glow */}
@@ -201,27 +201,30 @@ export default function App() {
 
         <div
           ref={heroReveal.ref}
-          className={`relative z-10 text-center px-6 max-w-4xl mx-auto transition-all duration-1000 ${
+          className={`relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center justify-center gap-5 sm:gap-6 transition-all duration-1000 ${
             heroReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           <img
             src="/assets/hockey/logos/BIG Logo - Transparent on Dark - Final.webp"
             alt="Big Idea Games"
-            className="mx-auto mb-8 w-[280px] sm:w-[360px] lg:w-[420px] drop-shadow-2xl"
+            className="mx-auto w-[220px] sm:w-[320px] lg:w-[420px] drop-shadow-2xl"
           />
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl tracking-wider text-[#EAF6FF] mb-4">
-            Creating the Best Mobile Sports Games
+          <h1 className="font-display text-[clamp(1.75rem,6vw,3.75rem)] tracking-wider text-[#EAF6FF] leading-[1.1]">
+            Creating the Best
+            <br className="sm:hidden" />
+            {" "}Mobile{" "}
+            <span className="whitespace-nowrap">Sports Games</span>
           </h1>
-          <p className="font-sans text-lg sm:text-xl text-[#8BB8D9] font-light max-w-2xl mx-auto mb-10">
+          <p className="font-sans text-base sm:text-lg lg:text-xl text-[#B0CDE0] max-w-lg sm:max-w-2xl mx-auto leading-relaxed">
             Born during the pandemic. Built with passion. Played by millions.
           </p>
           <a
             href="#games"
-            className="inline-flex items-center gap-2 rounded-full px-8 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-blue"
+            className="inline-flex items-center gap-2.5 rounded-full px-10 py-4 text-base sm:text-lg font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-blue min-h-[48px]"
             style={{ background: "var(--gradient-blue)" }}
           >
-            <Smartphone className="h-5 w-5" />
+            <Smartphone className="h-5 w-5 shrink-0" />
             See Our Games
           </a>
         </div>
@@ -245,7 +248,7 @@ export default function App() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 rounded-full border-2 border-[#8BB8D9]/40 flex items-start justify-center p-1.5">
             <div className="w-1.5 h-3 rounded-full bg-[#28A9FF] animate-pulse" />
           </div>
@@ -281,17 +284,17 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#071B33] via-transparent to-[#071B33]/60" />
             </div>
 
-            <div className="relative z-10 p-8 sm:p-12 lg:p-16">
+            <div className="relative z-10 p-5 sm:p-12 lg:p-16">
               {/* Header row */}
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 gap-6">
-                <div className="flex items-center gap-6">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 gap-4 sm:gap-6">
+                <div className="flex items-center gap-4 sm:gap-6">
                   <img
                     src="/assets/hockey/logos/SuperstarHockey-Logo-2048x2048.webp"
                     alt="Superstar Hockey"
-                    className="w-[90px] sm:w-[120px] h-auto rounded-2xl shadow-card"
+                    className="w-[72px] sm:w-[120px] h-auto rounded-xl sm:rounded-2xl shadow-card shrink-0"
                   />
                   <div>
-                    <h3 className="font-display text-3xl sm:text-4xl tracking-wider text-[#EAF6FF]">
+                    <h3 className="font-display text-2xl sm:text-4xl tracking-wider text-[#EAF6FF]">
                       Superstar Hockey
                     </h3>
                     <p className="text-[#28A9FF] font-semibold text-sm uppercase tracking-widest mt-1">
@@ -349,23 +352,23 @@ export default function App() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#0A2E1A] via-[#0C2444] to-[#071B33]" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(34,197,94,0.12)_0%,_transparent_60%)]" />
 
-            <div className="relative z-10 p-8 sm:p-12 lg:p-16">
+            <div className="relative z-10 p-5 sm:p-12 lg:p-16">
               {/* Header row */}
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 gap-6">
-                <div className="flex items-center gap-6">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 gap-4 sm:gap-6">
+                <div className="flex items-center gap-4 sm:gap-6">
                   {/* Text-based logo since no logo file */}
-                  <div className="w-[90px] sm:w-[120px] h-[90px] sm:h-[120px] rounded-2xl bg-gradient-to-br from-[#22C55E] to-[#16A34A] flex items-center justify-center shadow-card flex-shrink-0">
+                  <div className="w-[72px] sm:w-[120px] h-[72px] sm:h-[120px] rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#22C55E] to-[#16A34A] flex items-center justify-center shadow-card flex-shrink-0">
                     <div className="text-center">
-                      <div className="font-display text-xl sm:text-2xl text-white tracking-wider leading-none">
+                      <div className="font-display text-lg sm:text-2xl text-white tracking-wider leading-none">
                         ⚽
                       </div>
-                      <div className="font-display text-[10px] sm:text-xs text-white/90 tracking-wider leading-tight mt-1">
+                      <div className="font-display text-[9px] sm:text-xs text-white/90 tracking-wider leading-tight mt-1">
                         SUPERSTAR<br/>SOCCER
                       </div>
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-display text-3xl sm:text-4xl tracking-wider text-[#EAF6FF]">
+                    <h3 className="font-display text-2xl sm:text-4xl tracking-wider text-[#EAF6FF]">
                       Superstar Soccer
                     </h3>
                     <p className="text-[#4ADE80] font-semibold text-sm uppercase tracking-widest mt-1">
