@@ -9,7 +9,8 @@
 /* ---------- Custom Font Faces ---------- */
 @font-face {
   font-family: "Bebas";
-  src: url("/fonts/Bebas-Regular.otf") format("opentype");
+  src: url("/fonts/Bebas-Regular.woff2") format("woff2"),
+       url("/fonts/Bebas-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: block;
@@ -17,7 +18,8 @@
 
 @font-face {
   font-family: "Oswald";
-  src: url("/fonts/Oswald-Regular.ttf") format("truetype");
+  src: url("/fonts/Oswald-Regular.woff2") format("woff2"),
+       url("/fonts/Oswald-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: block;
@@ -25,7 +27,8 @@
 
 @font-face {
   font-family: "Oswald";
-  src: url("/fonts/Oswald-Medium.ttf") format("truetype");
+  src: url("/fonts/Oswald-Medium.woff2") format("woff2"),
+       url("/fonts/Oswald-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: block;
@@ -33,7 +36,8 @@
 
 @font-face {
   font-family: "Oswald";
-  src: url("/fonts/Oswald-SemiBold.ttf") format("truetype");
+  src: url("/fonts/Oswald-SemiBold.woff2") format("woff2"),
+       url("/fonts/Oswald-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: block;
@@ -41,7 +45,8 @@
 
 @font-face {
   font-family: "Oswald";
-  src: url("/fonts/Oswald-Bold.ttf") format("truetype");
+  src: url("/fonts/Oswald-Bold.woff2") format("woff2"),
+       url("/fonts/Oswald-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: block;
@@ -49,7 +54,8 @@
 
 @font-face {
   font-family: "AlfaSlab";
-  src: url("/fonts/AlfaSlabOne-Regular.ttf") format("truetype");
+  src: url("/fonts/AlfaSlabOne-Regular.woff2") format("woff2"),
+       url("/fonts/AlfaSlabOne-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: block;
@@ -172,6 +178,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  opacity: 0;
+  transition: opacity 0.15s ease-in;
+}
+
+body.fonts-ready {
+  opacity: 1;
 }
 
 /* ---------- Utility classes ---------- */

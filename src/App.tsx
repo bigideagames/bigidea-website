@@ -231,12 +231,14 @@ export default function App() {
           <img
             src={HOCKEY_PLAYERS[0]}
             alt=""
+            loading="lazy"
             className="h-[260px] opacity-30 drop-shadow-2xl"
             style={{ animation: "float 4s ease-in-out infinite" }}
           />
           <img
             src={HOCKEY_PLAYERS[2]}
             alt=""
+            loading="lazy"
             className="h-[280px] opacity-25 drop-shadow-2xl"
             style={{ animation: "float 4s ease-in-out infinite 1s" }}
           />
@@ -272,6 +274,7 @@ export default function App() {
               <img
                 src="/assets/hockey/backgrounds/arena_bg_1024.webp"
                 alt=""
+                loading="lazy"
                 className="w-full h-full object-cover opacity-30"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#071B33] via-[#071B33]/90 to-transparent" />
@@ -328,8 +331,8 @@ export default function App() {
                 <img
                   src={HOCKEY_PLAYERS[3]}
                   alt=""
-                  className="h-[240px] opacity-40 drop-shadow-2xl"
                   loading="lazy"
+                  className="h-[240px] opacity-40 drop-shadow-2xl"
                 />
               </div>
             </div>
@@ -474,6 +477,7 @@ export default function App() {
               <img
                 src="/assets/hockey/logos/BIG - Icon (white).webp"
                 alt="Big Idea Games"
+                loading="lazy"
                 className="w-12 h-auto opacity-80"
               />
               <p className="text-[#5A8AAF] text-sm">
