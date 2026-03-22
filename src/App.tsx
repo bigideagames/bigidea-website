@@ -3,6 +3,8 @@ import HomePage from "./pages/HomePage";
 import TermsPage from "./pages/TermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import FaqPage from "./pages/FaqPage";
+import DeleteAccountHockeyPage from "./pages/DeleteAccountHockeyPage";
+import DeleteAccountSoccerPage from "./pages/DeleteAccountSoccerPage";
 
 export default function App() {
   return (
@@ -11,6 +13,8 @@ export default function App() {
       <Route path="/terms" element={<TermsPage />} />
       <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/faq" element={<FaqPage />} />
+      <Route path="/delete-account-superstar-hockey" element={<DeleteAccountHockeyPage />} />
+      <Route path="/delete-account-superstar-soccer" element={<DeleteAccountSoccerPage />} />
     </Routes>
   );
 }
