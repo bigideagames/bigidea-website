@@ -302,16 +302,16 @@ export default function App() {
       </section>
 
       {/* ──── OUR GAMES ──── */}
-      <section id="games" className="py-12 sm:py-20 lg:py-32">
+      <section id="games" className="py-8 sm:py-14 lg:py-24">
         <div className="max-w-7xl mx-auto px-3 sm:px-6">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-wider text-center text-[#EAF6FF] mb-4">
             Our Games
           </h2>
-          <p className="text-center text-[#8BB8D9] mb-10 sm:mb-16 max-w-xl mx-auto">
+          <p className="text-center text-[#8BB8D9] mb-6 sm:mb-10 max-w-xl mx-auto">
             Pick up and play sports action. Quick matches, deep progression, pure fun.
           </p>
 
-          <div className="flex flex-col gap-10 lg:gap-20">
+          <div className="flex flex-col gap-8 lg:gap-16">
           {/* ── SUPERSTAR HOCKEY ── */}
           <div
             ref={gamesReveal.ref}
@@ -455,7 +455,7 @@ export default function App() {
       </section>
 
       {/* ──── ABOUT / OUR STORY ──── */}
-      <section id="about" className="py-12 sm:py-20 lg:py-32 relative">
+      <section id="about" className="py-8 sm:py-14 lg:py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#071B33] via-[#0C2444] to-[#071B33]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,196,0,0.06)_0%,_transparent_60%)]" />
 
@@ -522,7 +522,7 @@ export default function App() {
       </section>
 
       {/* ──── FOOTER ──── */}
-      <footer className="border-t border-[#1A3A5C] bg-[#050F1D] py-8 sm:py-12">
+      <footer className="border-t border-[#1A3A5C] bg-[#050F1D] py-6 sm:py-10">
         <div className="max-w-7xl mx-auto px-3 sm:px-6">
           <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
             {/* Logo & info */}
