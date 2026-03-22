@@ -302,16 +302,16 @@ export default function App() {
       </section>
 
       {/* ──── OUR GAMES ──── */}
-      <section id="games" className="py-28 lg:py-40">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="games" className="py-12 sm:py-20 lg:py-32">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-wider text-center text-[#EAF6FF] mb-4">
             Our Games
           </h2>
-          <p className="text-center text-[#8BB8D9] mb-20 max-w-xl mx-auto">
+          <p className="text-center text-[#8BB8D9] mb-10 sm:mb-16 max-w-xl mx-auto">
             Pick up and play sports action. Quick matches, deep progression, pure fun.
           </p>
 
-          <div className="flex flex-col gap-16 lg:gap-24">
+          <div className="flex flex-col gap-10 lg:gap-20">
           {/* ── SUPERSTAR HOCKEY ── */}
           <div
             ref={gamesReveal.ref}
@@ -455,11 +455,11 @@ export default function App() {
       </section>
 
       {/* ──── ABOUT / OUR STORY ──── */}
-      <section id="about" className="py-28 lg:py-40 relative">
+      <section id="about" className="py-12 sm:py-20 lg:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#071B33] via-[#0C2444] to-[#071B33]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,196,0,0.06)_0%,_transparent_60%)]" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
+        <div className="relative z-10 max-w-4xl mx-auto px-3 sm:px-6">
           <div
             ref={aboutReveal.ref}
             className={`transition-all duration-1000 ${
@@ -519,8 +519,8 @@ export default function App() {
       </section>
 
       {/* ──── FOOTER ──── */}
-      <footer className="border-t border-[#1A3A5C] bg-[#050F1D] py-16">
-        <div className="max-w-7xl mx-auto px-6">
+      <footer className="border-t border-[#1A3A5C] bg-[#050F1D] py-8 sm:py-12">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6">
           <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
             {/* Logo & info */}
             <div className="flex flex-col items-center md:items-start gap-4">
