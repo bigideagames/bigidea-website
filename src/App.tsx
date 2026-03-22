@@ -365,6 +365,11 @@ export default function App() {
                 make it easy to learn, hard to master.
               </p>
 
+              {/* Screenshots */}
+              <div className="mb-8">
+                <ScreenshotCarousel screenshots={HOCKEY_SCREENSHOTS} accent="blue" />
+              </div>
+
               {/* Store badges */}
               <div className="mb-8">
                 <StoreBadges
@@ -372,11 +377,6 @@ export default function App() {
                   googlePlayUrl="https://play.google.com/store/apps/details?id=com.bigideagames.googleplay.superhockey"
                   size="cta"
                 />
-              </div>
-
-              {/* Screenshots */}
-              <div className="mb-8">
-                <ScreenshotCarousel screenshots={HOCKEY_SCREENSHOTS} accent="blue" />
               </div>
 
               {/* Decorative player renders */}
@@ -435,6 +435,11 @@ export default function App() {
                 keeps you coming back.
               </p>
 
+              {/* Screenshots */}
+              <div className="mb-8">
+                <ScreenshotCarousel screenshots={SOCCER_SCREENSHOTS} accent="green" />
+              </div>
+
               {/* Store badges */}
               <div className="mb-8">
                 <StoreBadges
@@ -442,11 +447,6 @@ export default function App() {
                   googlePlayUrl="https://play.google.com/store/apps/details?id=com.bigideagames.googleplay.supersoccer"
                   size="cta"
                 />
-              </div>
-
-              {/* Screenshots */}
-              <div className="mb-8">
-                <ScreenshotCarousel screenshots={SOCCER_SCREENSHOTS} accent="green" />
               </div>
             </div>
           </div>
