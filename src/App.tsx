@@ -145,9 +145,9 @@ function StoreBadges({
   googlePlayUrl: string;
   size?: "inline" | "cta";
 }) {
-  const w = size === "cta" ? "w-[180px]" : "w-[155px]";
+  const w = size === "cta" ? "w-[140px] sm:w-[180px]" : "w-[130px] sm:w-[155px]";
   return (
-    <div className="flex flex-wrap items-center justify-center gap-3">
+    <div className="flex items-center justify-center gap-2 sm:gap-3">
       <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
         <img
           src="/assets/badges/app-store-badge.svg"
