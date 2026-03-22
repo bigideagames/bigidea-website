@@ -311,10 +311,11 @@ export default function App() {
             Pick up and play sports action. Quick matches, deep progression, pure fun.
           </p>
 
+          <div className="flex flex-col gap-16 lg:gap-24">
           {/* ── SUPERSTAR HOCKEY ── */}
           <div
             ref={gamesReveal.ref}
-            className={`relative rounded-3xl overflow-hidden mb-24 lg:mb-32 transition-all duration-1000 ${
+            className={`relative rounded-3xl overflow-hidden transition-all duration-1000 ${
               gamesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             }`}
           >
@@ -448,6 +449,7 @@ export default function App() {
                 <ScreenshotCarousel screenshots={SOCCER_SCREENSHOTS} accent="green" />
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
