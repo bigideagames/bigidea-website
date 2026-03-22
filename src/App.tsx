@@ -302,7 +302,7 @@ export default function App() {
       </section>
 
       {/* ──── OUR GAMES ──── */}
-      <section id="games" className="py-8 sm:py-14 lg:py-24">
+      <section id="games" className="py-6 sm:py-10 lg:py-16">
         <div className="max-w-7xl mx-auto px-3 sm:px-6">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-wider text-center text-[#EAF6FF] mb-4">
             Our Games
@@ -311,7 +311,7 @@ export default function App() {
             Pick up and play sports action. Quick matches, deep progression, pure fun.
           </p>
 
-          <div className="flex flex-col gap-8 lg:gap-16">
+          <div className="flex flex-col gap-6 lg:gap-12">
           {/* ── SUPERSTAR HOCKEY ── */}
           <div
             ref={gamesReveal.ref}
@@ -455,7 +455,7 @@ export default function App() {
       </section>
 
       {/* ──── ABOUT / OUR STORY ──── */}
-      <section id="about" className="py-8 sm:py-14 lg:py-24 relative">
+      <section id="about" className="py-6 sm:py-10 lg:py-16 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#071B33] via-[#0C2444] to-[#071B33]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,196,0,0.06)_0%,_transparent_60%)]" />
 
@@ -522,17 +522,11 @@ export default function App() {
       </section>
 
       {/* ──── FOOTER ──── */}
-      <footer className="border-t border-[#1A3A5C] bg-[#050F1D] py-6 sm:py-10">
+      <footer className="border-t border-[#1A3A5C] bg-[#050F1D] py-4 sm:py-6">
         <div className="max-w-7xl mx-auto px-3 sm:px-6">
-          <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
-            {/* Logo & info */}
-            <div className="flex flex-col items-center md:items-start gap-4">
-              <img
-                src="/assets/hockey/logos/BIG - Icon (white).webp"
-                alt="Big Idea Games"
-                loading="lazy"
-                className="w-12 h-auto opacity-80"
-              />
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
+            {/* Copyright */}
+            <div className="flex flex-col items-center md:items-start">
               <p className="text-[#5A8AAF] text-sm">
                 © 2026 Big Idea Games Inc.
               </p>
