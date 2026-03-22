@@ -6,28 +6,22 @@ const BASE = import.meta.env.BASE_URL;
 const STEPS = [
   {
     num: 1,
-    text: 'Start up the App and load to the Main Screen. Tap the "Settings" button in the Top Left corner.',
-    image: `${BASE}assets/hockey/delete-account/step1-main-screen.png`,
-    wide: true,
-  },
-  {
-    num: 2,
-    text: 'Tap the "Accounts" button.',
+    text: 'From the Main Screen, tap the Settings gear icon in the top-left corner.',
     image: `${BASE}assets/hockey/delete-account/step2-accounts.png`,
   },
   {
-    num: 3,
-    text: 'Tap the "Delete Account" button.',
+    num: 2,
+    text: 'In Settings, tap the blue "Accounts" button.',
     image: `${BASE}assets/hockey/delete-account/step3-delete-button.png`,
   },
   {
-    num: 4,
-    text: 'Tap the "Delete Account" button.',
+    num: 3,
+    text: 'Under Cloud Save Games, tap the "Delete Account" button.',
     image: `${BASE}assets/hockey/delete-account/step4-confirm.png`,
   },
   {
-    num: 5,
-    text: 'Tap the "Delete" button to confirm the permanent deletion of your data.',
+    num: 4,
+    text: 'Tap the red "Delete Account" button to confirm permanent deletion of your data.',
     image: `${BASE}assets/hockey/delete-account/step5-final-confirm.png`,
   },
 ];
@@ -45,11 +39,11 @@ export default function DeleteAccountSoccerPage() {
           Delete Account — Superstar Soccer
         </h1>
         <h2 className="text-lg sm:text-xl text-[#8BB8D9] mb-4">
-          How to Permanently Delete Your Account (5 steps)
+          How to Permanently Delete Your Account
         </h2>
 
         <p className="text-[#8BB8D9] mb-10">
-          If you still need support with your game, please email us at{" "}
+          If you need support, please email us at{" "}
           <a
             href="mailto:superstarsoccer@bigidea.games"
             className="text-[#28A9FF] hover:underline"
@@ -68,7 +62,7 @@ export default function DeleteAccountSoccerPage() {
                 </span>
                 <p className="text-lg leading-relaxed pt-1.5">{step.text}</p>
               </div>
-              <div className={`ml-0 sm:ml-14 ${step.wide ? "" : "max-w-[280px]"}`}>
+              <div className="ml-0 sm:ml-14 max-w-[280px]">
                 <img
                   src={step.image}
                   alt={`Step ${step.num}`}
