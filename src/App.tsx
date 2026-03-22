@@ -314,7 +314,7 @@ export default function App() {
           {/* ── SUPERSTAR HOCKEY ── */}
           <div
             ref={gamesReveal.ref}
-            className={`relative rounded-3xl overflow-hidden mb-28 lg:mb-36 transition-all duration-1000 ${
+            className={`relative rounded-3xl overflow-hidden mb-0 transition-all duration-1000 ${
               gamesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             }`}
           >
