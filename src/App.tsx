@@ -473,15 +473,18 @@ export default function App() {
             <div className="bg-[#0C2444]/80 backdrop-blur-sm rounded-3xl px-6 py-8 sm:p-12 border border-[#1A3A5C]/50">
               <div className="max-w-2xl mx-auto">
                 <p className="text-[#8BB8D9] text-lg leading-relaxed mb-6">
-                  You know how you always hear how game studios started in a garage? Well, we're
-                  not too far from that! Ours started at home in 2020 with a dream and a lot of
-                  late nights.
+                  Big Idea Games was founded in October 2020 by Travis and Sharon Brown-John —
+                  two people with over 20 years each in Vancouver's video game industry. Travis
+                  is the tech and product guru, with experience at studios like Radical
+                  Entertainment, Next Level Games, and Hothead Games. Sharon brings the
+                  structure, running operations with experience across executive admin,
+                  marketing, and HR.
                 </p>
                 <p className="text-[#8BB8D9] text-lg leading-relaxed mb-8">
-                  Remote working was a thing and we'd always had a dream to one day develop our
-                  own game and branch off on our own. What started as a side project became
-                  something real — a small team with big ideas, building sports games we actually
-                  want to play.
+                  Travis always had a passion for hockey and a dream of making his own game.
+                  Sometimes you just have to go for those big dreams and make them a reality.
+                  What started at home with late nights and a laptop became something real — a
+                  small studio with big ideas, building sports games people actually love to play.
                 </p>
 
                 {/* Mission */}
