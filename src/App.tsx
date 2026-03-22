@@ -173,7 +173,7 @@ function StoreBadges({
 function StatPill({ icon, text, accent = "blue" }: { icon: React.ReactNode; text: string; accent?: "blue" | "green" }) {
   const bg = accent === "green" ? "bg-[#22C55E]/15 text-[#4ADE80]" : "bg-[#0E66C1]/15 text-[#28A9FF]";
   return (
-    <div className={`inline-flex items-center gap-2 rounded-full px-4 py-2 ${bg} text-sm font-semibold`}>
+    <div className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 sm:px-4 sm:py-2 ${bg} text-xs sm:text-sm font-semibold`}>
       {icon}
       {text}
     </div>
@@ -351,7 +351,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   <StatPill icon={<Star className="h-4 w-4" />} text="4.8★ App Store" />
                   <StatPill icon={<Download className="h-4 w-4" />} text="2M+ Downloads" />
                   <StatPill icon={<Smartphone className="h-4 w-4" />} text="Free" />
@@ -421,7 +421,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   <StatPill icon={<Star className="h-4 w-4" />} text="4.6★ App Store" accent="green" />
                   <StatPill icon={<Download className="h-4 w-4" />} text="10K+ Downloads" accent="green" />
                   <StatPill icon={<Smartphone className="h-4 w-4" />} text="Free" accent="green" />
