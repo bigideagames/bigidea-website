@@ -345,9 +345,7 @@ export default function App() {
                     <h3 className="font-display text-2xl sm:text-4xl tracking-wider text-[#EAF6FF]">
                       Superstar Hockey
                     </h3>
-                    <p className="text-[#28A9FF] font-semibold text-sm uppercase tracking-widest mt-1">
-                      Flagship Title
-                    </p>
+
                   </div>
                 </div>
 
@@ -415,9 +413,7 @@ export default function App() {
                     <h3 className="font-display text-2xl sm:text-4xl tracking-wider text-[#EAF6FF]">
                       Superstar Soccer
                     </h3>
-                    <p className="text-[#4ADE80] font-semibold text-sm uppercase tracking-widest mt-1">
-                      New Release
-                    </p>
+
                   </div>
                 </div>
 
