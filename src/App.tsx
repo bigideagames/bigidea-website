@@ -185,36 +185,49 @@ function StatPill({ icon, text, accent = "blue" }: { icon: React.ReactNode; text
    ────────────────────────────────────────────── */
 
 /* ──────────────────────────────────────────────
-   Hero Background Video
+   Hero Background Slideshow
    ────────────────────────────────────────────── */
 
-function HeroVideo() {
+// Alternating hockey/soccer screenshots for hero backdrop
+const HERO_SLIDES = [
+  HOCKEY_SCREENSHOTS[0],
+  SOCCER_SCREENSHOTS[0],
+  HOCKEY_SCREENSHOTS[1],
+  SOCCER_SCREENSHOTS[1],
+  HOCKEY_SCREENSHOTS[2],
+  SOCCER_SCREENSHOTS[2],
+  HOCKEY_SCREENSHOTS[3],
+  SOCCER_SCREENSHOTS[3],
+  HOCKEY_SCREENSHOTS[4],
+  SOCCER_SCREENSHOTS[4],
+];
+
+function HeroSlideshow() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="absolute inset-0">
-      {/* Landscape video for desktop, portrait for mobile */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover hidden sm:block"
-        style={{ filter: "blur(3px)" }}
-        poster={HOCKEY_SCREENSHOTS[0]}
-      >
-        <source src="/assets/hockey/video/hero-bg-landscape.mp4" type="video/mp4" />
-      </video>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover sm:hidden"
-        style={{ filter: "blur(3px)" }}
-        poster={HOCKEY_SCREENSHOTS[0]}
-      >
-        <source src="/assets/hockey/video/hero-bg-portrait.mp4" type="video/mp4" />
-      </video>
-      {/* Overlay to dim video — same treatment as before */}
+      {HERO_SLIDES.map((src, i) => (
+        <img
+          key={src}
+          src={src}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out"
+          style={{
+            opacity: i === current ? 1 : 0,
+            transform: "scale(1)",
+            filter: "blur(2px)",
+          }}
+        />
+      ))}
+      {/* Overlay to dim screenshots — light enough to see the action */}
       <div className="absolute inset-0 bg-[#071B33]/55" />
       <div className="absolute inset-0 bg-gradient-to-b from-[#071B33]/40 via-transparent to-[#071B33]/80" />
     </div>
@@ -231,8 +244,8 @@ export default function App() {
     <div className="min-h-screen bg-[var(--bg-primary)]">
       {/* ──── HERO ──── */}
       <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
-        {/* Video background */}
-        <HeroVideo />
+        {/* Slideshow background */}
+        <HeroSlideshow />
 
         <div
           ref={heroReveal.ref}
