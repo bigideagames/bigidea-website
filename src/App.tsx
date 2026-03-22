@@ -6,29 +6,29 @@ import { ChevronLeft, ChevronRight, Star, Download, Smartphone, Mail } from "luc
    ────────────────────────────────────────────── */
 
 const HOCKEY_SCREENSHOTS = [
-  "/assets/hockey/screenshots/screenshot001_1290x2796.webp",
-  "/assets/hockey/screenshots/screenshot002_1290x2796.webp",
-  "/assets/hockey/screenshots/screenshot003_1290x2796.webp",
-  "/assets/hockey/screenshots/screenshot004_1290x2796.webp",
-  "/assets/hockey/screenshots/screenshot006_1290x2796.webp",
-  "/assets/hockey/screenshots/screenshot007_1290x2796.webp",
+  `${import.meta.env.BASE_URL}assets/hockey/screenshots/screenshot001_1290x2796.webp`,
+  `${import.meta.env.BASE_URL}assets/hockey/screenshots/screenshot002_1290x2796.webp`,
+  `${import.meta.env.BASE_URL}assets/hockey/screenshots/screenshot003_1290x2796.webp`,
+  `${import.meta.env.BASE_URL}assets/hockey/screenshots/screenshot004_1290x2796.webp`,
+  `${import.meta.env.BASE_URL}assets/hockey/screenshots/screenshot006_1290x2796.webp`,
+  `${import.meta.env.BASE_URL}assets/hockey/screenshots/screenshot007_1290x2796.webp`,
 ];
 
 const SOCCER_SCREENSHOTS = [
-  "/assets/soccer/soccer_A.webp",
-  "/assets/soccer/soccer_B.webp",
-  "/assets/soccer/soccer_C.webp",
-  "/assets/soccer/soccer_D.webp",
-  "/assets/soccer/soccer_E.webp",
-  "/assets/soccer/soccer_F.webp",
+  `${import.meta.env.BASE_URL}assets/soccer/soccer_A.webp`,
+  `${import.meta.env.BASE_URL}assets/soccer/soccer_B.webp`,
+  `${import.meta.env.BASE_URL}assets/soccer/soccer_C.webp`,
+  `${import.meta.env.BASE_URL}assets/soccer/soccer_D.webp`,
+  `${import.meta.env.BASE_URL}assets/soccer/soccer_E.webp`,
+  `${import.meta.env.BASE_URL}assets/soccer/soccer_F.webp`,
 ];
 
 const HOCKEY_PLAYERS = [
-  "/assets/hockey/players/player_bf_burns.webp",
-  "/assets/hockey/players/player_cup.webp",
-  "/assets/hockey/players/player_gourdain.webp",
-  "/assets/hockey/players/player_krejci.webp",
-  "/assets/hockey/players/player_weight.webp",
+  `${import.meta.env.BASE_URL}assets/hockey/players/player_bf_burns.webp`,
+  `${import.meta.env.BASE_URL}assets/hockey/players/player_cup.webp`,
+  `${import.meta.env.BASE_URL}assets/hockey/players/player_gourdain.webp`,
+  `${import.meta.env.BASE_URL}assets/hockey/players/player_krejci.webp`,
+  `${import.meta.env.BASE_URL}assets/hockey/players/player_weight.webp`,
 ];
 
 /* ──────────────────────────────────────────────
@@ -150,14 +150,14 @@ function StoreBadges({
     <div className="flex items-center justify-center gap-2 sm:gap-3">
       <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">
         <img
-          src="/assets/badges/app-store-badge.svg"
+          src={`${import.meta.env.BASE_URL}assets/badges/app-store-badge.svg`}
           alt="Download on the App Store"
           className={`${w} h-auto hover:scale-105 transition-transform`}
         />
       </a>
       <a href={googlePlayUrl} target="_blank" rel="noopener noreferrer">
         <img
-          src="/assets/badges/google-play-badge.png"
+          src={`${import.meta.env.BASE_URL}assets/badges/google-play-badge.png`}
           alt="Get it on Google Play"
           className={`${w} h-auto hover:scale-105 transition-transform`}
         />
@@ -254,7 +254,7 @@ export default function App() {
           }`}
         >
           <img
-            src="/assets/hockey/logos/BIG Logo - Transparent on Dark - Final.webp"
+            src={`${import.meta.env.BASE_URL}assets/hockey/logos/BIG Logo - Transparent on Dark - Final.webp`}
             alt="Big Idea Games"
             className="mx-auto w-[385px] sm:w-[560px] lg:w-[735px] drop-shadow-2xl"
           />
@@ -323,7 +323,7 @@ export default function App() {
             {/* Background */}
             <div className="absolute inset-0">
               <img
-                src="/assets/hockey/backgrounds/arena_bg_1024.webp"
+                src={`${import.meta.env.BASE_URL}assets/hockey/backgrounds/arena_bg_1024.webp`}
 
                 alt=""
                 loading="lazy"
@@ -338,7 +338,7 @@ export default function App() {
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 gap-4 sm:gap-6">
                 <div className="flex items-center gap-4 sm:gap-6">
                   <img
-                    src="/assets/hockey/logos/SuperstarHockey-Logo-2048x2048.webp"
+                    src={`${import.meta.env.BASE_URL}assets/hockey/logos/SuperstarHockey-Logo-2048x2048.webp`}
                     alt="Superstar Hockey"
                     className="w-[72px] sm:w-[120px] h-auto rounded-xl sm:rounded-2xl shadow-card shrink-0"
                   />
@@ -406,7 +406,7 @@ export default function App() {
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8 gap-4 sm:gap-6">
                 <div className="flex items-center gap-4 sm:gap-6">
                   <img
-                    src="/assets/soccer/soccer-icon.png"
+                    src={`${import.meta.env.BASE_URL}assets/soccer/soccer-icon.png`}
                     alt="Superstar Soccer"
                     className="w-[72px] sm:w-[120px] h-[72px] sm:h-[120px] rounded-xl sm:rounded-2xl shadow-card flex-shrink-0"
                   />
