@@ -302,19 +302,19 @@ export default function App() {
       </section>
 
       {/* ──── OUR GAMES ──── */}
-      <section id="games" className="py-20 lg:py-28">
+      <section id="games" className="py-28 lg:py-40">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-wider text-center text-[#EAF6FF] mb-4">
             Our Games
           </h2>
-          <p className="text-center text-[#8BB8D9] mb-16 max-w-xl mx-auto">
+          <p className="text-center text-[#8BB8D9] mb-20 max-w-xl mx-auto">
             Pick up and play sports action. Quick matches, deep progression, pure fun.
           </p>
 
           {/* ── SUPERSTAR HOCKEY ── */}
           <div
             ref={gamesReveal.ref}
-            className={`relative rounded-3xl overflow-hidden mb-20 transition-all duration-1000 ${
+            className={`relative rounded-3xl overflow-hidden mb-28 lg:mb-36 transition-all duration-1000 ${
               gamesReveal.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             }`}
           >
@@ -322,6 +322,7 @@ export default function App() {
             <div className="absolute inset-0">
               <img
                 src="/assets/hockey/backgrounds/arena_bg_1024.webp"
+
                 alt=""
                 loading="lazy"
                 className="w-full h-full object-cover opacity-30"
@@ -452,7 +453,7 @@ export default function App() {
       </section>
 
       {/* ──── ABOUT / OUR STORY ──── */}
-      <section id="about" className="py-20 lg:py-28 relative">
+      <section id="about" className="py-28 lg:py-40 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#071B33] via-[#0C2444] to-[#071B33]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(255,196,0,0.06)_0%,_transparent_60%)]" />
 
@@ -516,7 +517,7 @@ export default function App() {
       </section>
 
       {/* ──── FOOTER ──── */}
-      <footer className="border-t border-[#1A3A5C] bg-[#050F1D] py-12">
+      <footer className="border-t border-[#1A3A5C] bg-[#050F1D] py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8">
             {/* Logo & info */}
