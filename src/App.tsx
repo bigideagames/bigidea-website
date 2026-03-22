@@ -308,7 +308,8 @@ export default function App() {
             Our Games
           </h2>
           <p className="text-center text-[#8BB8D9] mb-6 sm:mb-10 max-w-xl mx-auto">
-            Pick up and play sports action. Quick matches, deep progression, pure fun.
+            Pick up and play sports action.<br />
+            Quick matches, deep progression, pure fun.
           </p>
 
           <div className="flex flex-col gap-6 lg:gap-12">
@@ -342,7 +343,7 @@ export default function App() {
                     className="w-[72px] sm:w-[120px] h-auto rounded-xl sm:rounded-2xl shadow-card shrink-0"
                   />
                   <div>
-                    <h3 className="font-display text-2xl sm:text-4xl tracking-wider text-[#EAF6FF]">
+                    <h3 className="font-display text-3xl sm:text-5xl lg:text-6xl tracking-wider text-[#EAF6FF]">
                       Superstar Hockey
                     </h3>
 
@@ -410,7 +411,7 @@ export default function App() {
                     className="w-[72px] sm:w-[120px] h-[72px] sm:h-[120px] rounded-xl sm:rounded-2xl shadow-card flex-shrink-0"
                   />
                   <div>
-                    <h3 className="font-display text-2xl sm:text-4xl tracking-wider text-[#EAF6FF]">
+                    <h3 className="font-display text-3xl sm:text-5xl lg:text-6xl tracking-wider text-[#EAF6FF]">
                       Superstar Soccer
                     </h3>
 
