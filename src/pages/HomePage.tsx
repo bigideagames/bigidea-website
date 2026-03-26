@@ -280,6 +280,10 @@ export default function HomePage() {
           </p>
           <a
             href="#games"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("games")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="flex items-center justify-center gap-3 rounded-full font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-glow-blue shadow-lg no-underline"
             style={{
               background: "linear-gradient(135deg, #0E66C1, #28A9FF)",
