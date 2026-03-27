@@ -14,6 +14,13 @@
     <link rel="preload" href="/fonts/Oswald-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
+    <!-- Restore path from 404.html redirect (GitHub Pages SPA trick) -->
+    <script>
+      (function () {
+        var q = Object.fromEntries(new URLSearchParams(location.search));
+        if (q.p) history.replaceState(null, '', q.p + (q.q ? '?' + q.q : '') + location.hash);
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

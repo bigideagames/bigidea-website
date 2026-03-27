@@ -13,6 +13,7 @@ export default function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/terms" element={<TermsPage />} />
       <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/privacy-policy" element={<PrivacyPage />} />
       <Route path="/faq" element={<FaqPage />} />
       <Route path="/delete-account-superstar-hockey" element={<DeleteAccountHockeyPage />} />
       <Route path="/delete-account-superstar-soccer" element={<DeleteAccountSoccerPage />} />
