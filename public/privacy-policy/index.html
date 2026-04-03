@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Privacy Policy — Big Idea Games</title>
+  <meta name="description" content="Privacy Policy for Big Idea Games Inc., makers of Superstar Hockey and Superstar Soccer." />
+  <meta property="og:title" content="Privacy Policy — Big Idea Games" />
+  <meta property="og:description" content="Privacy Policy for Big Idea Games Inc., makers of Superstar Hockey and Superstar Soccer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bigidea.games/privacy-policy" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preload" href="/fonts/Bebas-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/Oswald-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/Oswald-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+    @font-face {
+      font-family: "Bebas";
+      src: url("/fonts/Bebas-Regular.woff2") format("woff2");
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Oswald";
+      src: url("/fonts/Oswald-Regular.woff2") format("woff2");
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Oswald";
+      src: url("/fonts/Oswald-SemiBold.woff2") format("woff2");
+      font-weight: 600; font-style: normal; font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: #071B33;
+      color: #EAF6FF;
+      font-family: "Oswald", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: #28A9FF; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .header {
+      padding: 1rem 1.5rem;
+    }
+    .header-inner {
+      max-width: 56rem;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header img {
+      width: 160px;
+      height: auto;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+    @media (min-width: 640px) { .header img { width: 180px; } }
+
+    .back-link {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 0 1rem 1rem;
+      font-size: 0.875rem;
+    }
+    .back-link a {
+      color: #8BB8D9;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      transition: color 0.15s;
+    }
+    .back-link a:hover { color: #28A9FF; text-decoration: none; }
+
+    main {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    h1 {
+      font-family: "Bebas", ui-sans-serif, system-ui, sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      color: #EAF6FF;
+      margin-bottom: 0.5rem;
+    }
+    @media (min-width: 640px) { h1 { font-size: 2.5rem; } }
+    @media (min-width: 1024px) { h1 { font-size: 3rem; } }
+
+    .last-updated {
+      color: #5A8AAF;
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+    }
+
+    .content {
+      color: #8BB8D9;
+      line-height: 1.7;
+    }
+    .content p { margin-bottom: 1rem; }
+
+    h2 {
+      font-family: "Bebas", ui-sans-serif, system-ui, sans-serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.05em;
+      color: #EAF6FF;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    @media (min-width: 640px) { h2 { font-size: 1.5rem; } }
+
+    h3 {
+      color: #EAF6FF;
+      font-weight: 600;
+      font-size: 1.125rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    ul li { margin-bottom: 0.25rem; }
+    ul li .op-name { color: #EAF6FF; font-weight: 600; }
+
+    .op-list { list-style: none; padding-left: 1rem; }
+    .op-list li { margin-bottom: 0.75rem; }
+
+    address {
+      font-style: normal;
+      color: #EAF6FF;
+      margin-left: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #1A3A5C;
+      background: #050F1D;
+      padding: 1rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 80rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .footer-copy { color: #5A8AAF; font-size: 0.875rem; }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+    }
+    .footer-links a { color: #8BB8D9; transition: color 0.15s; }
+    .footer-links a:hover { color: #28A9FF; text-decoration: none; }
+
+    /* Arrow SVG */
+    .arrow-left {
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/">
+        <img src="/assets/hockey/logos/BIG Logo - Transparent on Dark - Final.webp" alt="Big Idea Games" />
+      </a>
+    </div>
+  </header>
+
+  <!-- Back link -->
+  <div class="back-link">
+    <a href="/">
+      <svg class="arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Back to Home
+    </a>
+  </div>
+
+  <!-- Content -->
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="last-updated">Last Updated: September 13, 2021</p>
+
+    <div class="content">
+      <p>Big Idea Games Inc. provides this Privacy Policy to explain how it collects, stores, and uses the information collected in connection with Big Idea Games' software applications, and websites (collectively, "services"). Big Idea Games respects the privacy of their users and is committed to protecting the user's information. You have a right to know our practices regarding the information we may collect and use when you use our services.</p>
+
+      <h2>The Types Of Information We Collect And How We Collect It</h2>
+
+      <h3>Personal Information</h3>
+      <p>Big Idea Games collects the advertising identifier (Apple's IDFA/IDFV and Google's GAID), and a unique identifier for each user in our mobile games.</p>
+      <p>Big Idea Games integrates third party SDKs into our services. These SDKs are used for advertising to our users, analyzing service usage, enabling in-app purchases, or providing game services including achievements, leaderboards, and account management. We allow third party operators this collected data solely for internal operations of the service as permitted by applicable rules and laws. This could include, but is not limited to, persistent advertising identifiers, geolocation information, and IP address. We encourage you to review the policies of the third party operators listed below.</p>
+      <p>Should a user explicitly provide it to us when prompted, we will collect email addresses of our users for our mailing list(s), account recovery, or customer support purposes.</p>
+      <p>Some of our services require or allow a user to provide a screen name so they can be identified within the service.</p>
+
+      <h3>Non-personal Information</h3>
+      <p>We allow third parties to collect some information by which users cannot be identified. Non-personal information may include technical information about your device, such as your browser type, screen resolution, device type, language, type of operating system and geo location (only general location).</p>
+      <p>Non-personal information is gathered by third party services while you are accessing the service. They are allowed to use this information to conduct research and analysis, but only for strictly limited purposes. We encourage you to review the policies of the third party operators listed below.</p>
+      <p>Internally, Big Idea Games also reserves the right to collect anonymous information for research and analysis. This information is generic in nature and cannot be used to individually identify a user. This information is collected each time a user runs one of our services.</p>
+
+      <h3>Service Specific Information</h3>
+      <p>Some Big Idea Games services allow users to send messages to each other while playing a game. These messages are then transmitted and stored on Big Idea Games controlled servers, or on the servers of one of our third party service providers.</p>
+
+      <h2>What We Do With the Personal Information We Collect</h2>
+      <p>Advertisers collect data regarding advertisement performance, user's interaction with ads, our apps and user's interests. Collected data may include user's personal information in order to serve users ads and for the third parties' legitimate business interests.</p>
+      <p>Big Idea Games and third party operators may use collected personal data to help measure the effectiveness of Big Idea Games' promotional campaigns.</p>
+      <p>Big Idea Games collects persistent identifiers in order to provide support for our services to our users. Additionally, Big Idea Games uses persistent identifiers to send promotions regarding new products or updates to our users. If we keep track of persistent advertising identifiers, it allows us to only notify these users about new products that they will actually be interested in.</p>
+      <p>We collect email addresses in many of our services so that we can notify interested users of upcoming releases and updates of our products and services. These emails always include a way to unsubscribe from receiving future emails. We may also collect email addresses for the purposes of offering support or recovering a user's account.</p>
+      <p>When a service asks for a username, it is used to visually identify that user to other users playing the game. Big Idea Games prohibits any user under the age of 13 from providing individually identifiable information in their username or screen name. This includes, but is not limited to the user's first name, last name, email address, and physical address.</p>
+
+      <h2>What We Do With the Non-personal Information We Collect</h2>
+      <p>Third party operators are allowed to collect and use non-personal information to conduct research and analysis, or to target advertisements, or other limited purposes. This information cannot be used to individually identify any user. We encourage you to review the policies of the third party operators listed below.</p>
+      <p>Similarly, Big Idea Games also uses non-personal information to conduct research and analysis. We do this to improve our services in future updates or to gain knowledge about how our users are interacting with the service.</p>
+
+      <h2>What We Do With Service Specific Information We Collect</h2>
+      <p>Each of our games that allow messaging other users provide an option for joining or creating publicly visible worlds/matches, or for playing only against other users known to the current user. Big Idea Games prohibits any user under the age of 13 from joining or creating publicly visible worlds/matches in these services. Additionally, Big Idea Games prohibits any user under the age of 13 from sharing personal or individually identifiable information while using the messaging functionality in these services.</p>
+      <p>If Big Idea Games collects identifiers associated with a user's account on social networks like Facebook or Twitter, or game services like Apple Game Center, Google Play Game Services, or Amazon Game Circle, then it is explicitly required for some feature in that service. For example, the identifier could be saved so that a user's connections on the social network can see their high score or progress in the game. As stated elsewhere in this policy, you can contact us to have this information deleted for yourself or your child under the age of 13.</p>
+
+      <h2>How to Opt-out of Targeted Advertising</h2>
+      <p>If you would like to opt-out of interest-based advertising, you may do so in your mobile device's settings. On iOS, this can be done by turning on the Limit Ad Tracking option under Settings → Privacy → Advertising. On Android, this can typically be found under Settings → Google → Ads → Opt out of Ads Personalization, although the exact location of this setting may differ depending on your device make and Android version. To learn more about targeted advertising and additional options that you can take regarding targeted advertising, please visit <a href="https://youradchoices.com/" target="_blank" rel="noopener noreferrer">youradchoices.com</a>.</p>
+
+      <h2>Children</h2>
+      <p>We understand the importance of protecting the privacy and safety of children using our services, as outlined by the Children's Online Privacy Protection Act of 1998 (COPPA). Accordingly, we do not knowingly collect, use, or disclose personal information from children under 13.</p>
+      <p>If you are a parent of a child under 13 years of age and you believe your child has provided us with personal information, please contact us using the information below and we will delete the information from our systems.</p>
+
+      <h2>Disclosure of Personal Information</h2>
+      <p>The scenarios in which we will share your personal data are as follows:</p>
+      <ul>
+        <li>we determine that it is required by law;</li>
+        <li>we have a good faith belief it is necessary to protect our rights or property;</li>
+        <li>we are participating in a merger, acquisition, liquidation, dissolution or sale of assets;</li>
+        <li>we have your consent; and</li>
+        <li>as described above in relation to third-party operators collecting information from our services.</li>
+      </ul>
+      <p>Under no other circumstances will Big Idea Games share, sell, rent, or release your data.</p>
+      <p>You may contact Big Idea Games to request access, change, update or delete your personal information at any time via email: <a href="mailto:privacy@bigidea.games">privacy@bigidea.games</a>. You have the right to these options as well as the right to not be discriminated against for exercising these options. A small fee may be imposed for access and disclosure of your personal information, where permitted under applicable law.</p>
+
+      <h2>Security</h2>
+      <p>We follow generally accepted industry standards and internal procedures to protect the personal information submitted to us, both during transmission and once we receive it.</p>
+
+      <h2>Third-party Operators</h2>
+
+      <h3>Advertising Networks</h3>
+      <p>Big Idea Games allows advertisements from the Third Party ad networks to be displayed in our services. Big Idea Games makes commercially reasonable efforts to ensure that the third party ad networks are configured to comply with applicable privacy laws, and we reasonably believe this to be the case for each of them. If we determine a service to be directed at children under the age of 13, we configure each of these ad networks to be compliant with the Children's Online Privacy Protection Act of 1998 (COPPA). For persons in European Union countries, we also configure networks to be compliant with the General Data Protection Regulation of 2016 (GDPR).</p>
+
+      <h3>In-App Purchases</h3>
+      <p>In order to make in-app purchases, a user must use a third party checkout option that we have integrated with our services to finalize and pay for their order. The third party operator's privacy policy and security practices will apply to this process a user's information. We encourage you to read that privacy statement before providing your information.</p>
+
+      <h3>Social Networks</h3>
+      <p>Some of our services integrate a third-party social network such as Facebook or Twitter to allow sharing progress with friends, or allowing them to be invited to use our service. The privacy policy of each social network will indicate what data is available to us and how we use it.</p>
+
+      <h3>Game Services</h3>
+      <p>Many of our services integrate either Apple Game Center, Google Play Game Services. Each of these third-party operators offer their own privacy policy (listed below), and we encourage you to review them.</p>
+
+      <h3>Analytics</h3>
+      <p>Big Idea Games makes use of Third Party service in order to measure how users utilize our services so that we may improve them, and to measure the effectiveness of our advertising campaigns.</p>
+
+      <h3>Third Party Operators List</h3>
+      <ul class="op-list">
+        <li><span class="op-name">AppLovin Corporation</span> — 849 High St., Palo Alto, CA 94301 — <a href="mailto:care@applovin.com">care@applovin.com</a> — <a href="https://www.applovin.com/privacy" target="_blank" rel="noopener noreferrer">https://www.applovin.com/privacy</a></li>
+        <li><span class="op-name">Adjust</span> — Saarbrücker Str. 37A, 10405 Berlin, Germany — <a href="https://www.adjust.com/terms/privacy-policy/" target="_blank" rel="noopener noreferrer">https://www.adjust.com/terms/privacy-policy/</a></li>
+        <li><span class="op-name">AdColony</span> — 1888 Century Park East, Suite 1450, Century City, CA 90067 — <a href="https://www.adcolony.com/privacy-policy/" target="_blank" rel="noopener noreferrer">https://www.adcolony.com/privacy-policy/</a></li>
+        <li><span class="op-name">Apple (iAd, Game Center)</span> — <a href="http://www.apple.com/privacy/privacy-policy/" target="_blank" rel="noopener noreferrer">http://www.apple.com/privacy/privacy-policy/</a></li>
+        <li><span class="op-name">brainCloud</span> — 1309 Carling Avenue, Ottawa, Ontario, K1Z 7L3, Canada — <a href="https://getbraincloud.com/privacy-policy/" target="_blank" rel="noopener noreferrer">https://getbraincloud.com/privacy-policy/</a></li>
+        <li><span class="op-name">Chartboost</span> — 420 Taylor Street, San Francisco, CA 94102 — <a href="mailto:privacy@chartboost.com">privacy@chartboost.com</a> — <a href="https://answers.chartboost.com/hc/en-us/articles/200780269-Privacy-Policy" target="_blank" rel="noopener noreferrer">https://answers.chartboost.com/hc/en-us/articles/200780269-Privacy-Policy</a></li>
+        <li><span class="op-name">DevToDev</span> — Vilnius Tech Park, Antakalnio 17-4, Vilnius, Lithuania, 10312 — <a href="https://www.devtodev.com/policy" target="_blank" rel="noopener noreferrer">https://www.devtodev.com/policy</a></li>
+        <li><span class="op-name">Facebook Inc.</span> — 1601 Willow Road, Menlo Park, CA 94025 — <a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener noreferrer">https://www.facebook.com/policy.php</a></li>
+        <li><span class="op-name">Fyber N.V.</span> — Wallstraße 9-13, 10179 Berlin, Germany — <a href="https://www.fyber.com/services-privacy-statement/" target="_blank" rel="noopener noreferrer">https://www.fyber.com/services-privacy-statement/</a></li>
+        <li><span class="op-name">GameAnalytics</span> — 1 Hardwick St, London EC1R 4RB, UK — <a href="https://gameanalytics.com/privacy/" target="_blank" rel="noopener noreferrer">https://gameanalytics.com/privacy/</a></li>
+        <li><span class="op-name">Google (Play, AdMob, Play Game Services, Analytics, Firebase)</span> — <a href="https://www.google.com/intl/en/policies/privacy/" target="_blank" rel="noopener noreferrer">https://www.google.com/intl/en/policies/privacy/</a></li>
+        <li><span class="op-name">ironSource Mobile Ltd.</span> — 121 Menachem Begin Rd., Tel Aviv, Israel — <a href="mailto:dpo@ironsrc.com">dpo@ironsrc.com</a> — <a href="https://developers.ironsrc.com/ironsource-mobile/air/ironsource-mobile-privacy-policy/" target="_blank" rel="noopener noreferrer">https://developers.ironsrc.com/ironsource-mobile/air/ironsource-mobile-privacy-policy/</a></li>
+        <li><span class="op-name">Mintegral</span> — RM701A, 7/F., OfficePlus @Prince Edward, 794-802 Nathan Road, KL, Hong Kong 999077 — <a href="mailto:privacy@mintegral.com">privacy@mintegral.com</a> — <a href="https://www.mintegral.com/en/privacy/" target="_blank" rel="noopener noreferrer">https://www.mintegral.com/en/privacy/</a></li>
+        <li><span class="op-name">N3TWORK</span> — PO Box 26209, San Francisco, CA 94126 — <a href="https://static.n3twork.com/docs/privacy-policy.html" target="_blank" rel="noopener noreferrer">https://static.n3twork.com/docs/privacy-policy.html</a></li>
+        <li><span class="op-name">UnityAds</span> — Unity Technologies, 795 Folsom Street, San Francisco, CA 94107 — <a href="mailto:privacy@unity3d.com">privacy@unity3d.com</a> — <a href="https://unity3d.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">https://unity3d.com/legal/privacy-policy</a></li>
+        <li><span class="op-name">Vungle</span> — 185 Clara Street, San Francisco, CA 94107 — <a href="mailto:marketing@vungle.com">marketing@vungle.com</a> — <a href="http://vungle.com/privacy/" target="_blank" rel="noopener noreferrer">http://vungle.com/privacy/</a></li>
+      </ul>
+
+      <h2>Changes to this Privacy Policy</h2>
+      <p>We will periodically update this privacy policy to reflect changes in our information practices, and to add additional third party operators. Please check back regularly, as your continued use of our services indicates your acceptance of any changes to this policy.</p>
+
+      <h2>Contact Information</h2>
+      <p>If you have any questions about our privacy policy, please contact us via email at <a href="mailto:privacy@bigidea.games">privacy@bigidea.games</a>, or mail us at:</p>
+      <address>
+        Big Idea Games Inc.<br />
+        4628 Highlawn Drive<br />
+        Burnaby, BC<br />
+        V5C 3S8
+      </address>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-copy">© 2026 Big Idea Games Inc.</div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="/faq">FAQ</a>
+        <a href="mailto:superstarhockey@bigidea.games">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
