@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Delete Your Account — Superstar Hockey</title>
+  <meta name="description" content="Request deletion of your Superstar Hockey account and associated data." />
+  <meta property="og:title" content="Delete Your Account — Superstar Hockey" />
+  <meta property="og:description" content="Request deletion of your Superstar Hockey account and associated data." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bigidea.games/delete-account-superstar-hockey" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preload" href="/fonts/Bebas-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/Oswald-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/Oswald-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+    @font-face {
+      font-family: "Bebas";
+      src: url("/fonts/Bebas-Regular.woff2") format("woff2");
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Oswald";
+      src: url("/fonts/Oswald-Regular.woff2") format("woff2");
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Oswald";
+      src: url("/fonts/Oswald-SemiBold.woff2") format("woff2");
+      font-weight: 600; font-style: normal; font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: #071B33;
+      color: #EAF6FF;
+      font-family: "Oswald", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: #28A9FF; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { padding: 1rem 1.5rem; }
+    .header-inner {
+      max-width: 56rem;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .header img {
+      width: 160px;
+      height: auto;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    }
+    @media (min-width: 640px) { .header img { width: 180px; } }
+
+    .back-link {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 0 1rem 1rem;
+      font-size: 0.875rem;
+    }
+    .back-link a {
+      color: #8BB8D9;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      transition: color 0.15s;
+    }
+    .back-link a:hover { color: #28A9FF; text-decoration: none; }
+
+    main {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+
+    h1 {
+      font-family: "Bebas", ui-sans-serif, system-ui, sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      color: #EAF6FF;
+      margin-bottom: 0.5rem;
+    }
+    @media (min-width: 640px) { h1 { font-size: 2.5rem; } }
+    @media (min-width: 1024px) { h1 { font-size: 3rem; } }
+
+    .subtitle {
+      color: #5A8AAF;
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+    }
+
+    .content {
+      color: #8BB8D9;
+      line-height: 1.7;
+    }
+    .content p { margin-bottom: 1rem; }
+
+    h2 {
+      font-family: "Bebas", ui-sans-serif, system-ui, sans-serif;
+      font-size: 1.25rem;
+      letter-spacing: 0.05em;
+      color: #EAF6FF;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    @media (min-width: 640px) { h2 { font-size: 1.5rem; } }
+
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    ul li { margin-bottom: 0.4rem; }
+
+    .cta-box {
+      background: #0D2B4A;
+      border: 1px solid #1A3A5C;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    .cta-box p { margin-bottom: 0.75rem; }
+    .cta-button {
+      display: inline-block;
+      background: #28A9FF;
+      color: #071B33;
+      font-family: "Bebas", ui-sans-serif, system-ui, sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      padding: 0.6rem 1.5rem;
+      border-radius: 0.4rem;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .cta-button:hover { background: #55BFFF; text-decoration: none; }
+
+    .warning-box {
+      background: #1A1A0A;
+      border: 1px solid #4A3A00;
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      color: #C8A000;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      border-top: 1px solid #1A3A5C;
+      background: #050F1D;
+      padding: 2rem 1.5rem;
+      color: #5A8AAF;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+    footer a { color: #5A8AAF; }
+    footer a:hover { color: #28A9FF; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="https://bigidea.games">
+        <img src="/assets/big-idea-games-logo.png" alt="Big Idea Games" onerror="this.style.display='none'" />
+      </a>
+    </div>
+  </header>
+
+  <div class="back-link">
+    <a href="https://bigidea.games">← Back to Big Idea Games</a>
+  </div>
+
+  <main>
+    <h1>Delete Your Account</h1>
+    <p class="subtitle">Superstar Hockey · Big Idea Games Inc.</p>
+
+    <div class="content">
+
+      <p>You can request deletion of your Superstar Hockey account and all associated personal data at any time. This page explains what gets deleted and how to submit your request.</p>
+
+      <div class="warning-box">
+        ⚠️ Account deletion is permanent and cannot be undone. All your progress, purchases, and data will be removed.
+      </div>
+
+      <h2>What Gets Deleted</h2>
+      <p>When your account is deleted, we will permanently remove:</p>
+      <ul>
+        <li>Your player profile and username</li>
+        <li>All game progress, stats, and achievements</li>
+        <li>In-game currency and items</li>
+        <li>Tournament history and leaderboard entries</li>
+        <li>Any personal data associated with your account</li>
+      </ul>
+
+      <h2>What We Retain</h2>
+      <p>We may retain certain data for a limited period as required by law or for legitimate business purposes, such as:</p>
+      <ul>
+        <li>Transaction records (for financial and legal compliance)</li>
+        <li>Anonymized, aggregated analytics data that cannot identify you</li>
+      </ul>
+
+      <h2>How to Request Deletion</h2>
+      <p>Send an email to our support team with the subject line <strong>"Account Deletion Request"</strong>. Please include your in-game username or the email address associated with your account so we can locate it.</p>
+      <p>We will process your request within 30 days and send a confirmation once complete.</p>
+
+      <div class="cta-box">
+        <p>Ready to delete your account? Email us at:</p>
+        <a class="cta-button" href="mailto:support@bigidea.games?subject=Account%20Deletion%20Request">support@bigidea.games</a>
+        <p style="margin-top:0.75rem; font-size:0.85rem; color:#5A8AAF;">Include your username or account email in the message.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Big Idea Games Inc. &nbsp;·&nbsp;
+      <a href="https://bigidea.games/privacy-policy">Privacy Policy</a>
+    </p>
+  </footer>
+
+</body>
+</html>
