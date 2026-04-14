@@ -11,7 +11,6 @@ const routes = [
   "terms",
   "privacy",
   "faq",
-  "delete-account-superstar-hockey",
   "delete-account-superstar-soccer",
   "superstarhockey",
 ];
