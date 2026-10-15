@@ -5,7 +5,6 @@ import PrivacyPage from "./pages/PrivacyPage";
 import FaqPage from "./pages/FaqPage";
 import DeleteAccountHockeyPage from "./pages/DeleteAccountHockeyPage";
 import DeleteAccountSoccerPage from "./pages/DeleteAccountSoccerPage";
-import PlayHockeyPage from "./pages/PlayHockeyPage";
 
 export default function App() {
   return (
@@ -17,7 +16,6 @@ export default function App() {
       <Route path="/faq" element={<FaqPage />} />
       <Route path="/delete-account-superstar-hockey" element={<DeleteAccountHockeyPage />} />
       <Route path="/delete-account-superstar-soccer" element={<DeleteAccountSoccerPage />} />
-      <Route path="/superstarhockey" element={<PlayHockeyPage />} />
     </Routes>
   );
 }
