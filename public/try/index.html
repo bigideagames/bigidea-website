@@ -38,7 +38,7 @@
   .get{font:400 17px/1 Bebas,"Arial Narrow",sans-serif;letter-spacing:1.5px;color:#92cdf0;margin:28px 0 10px}
   .stores{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.stores img{display:block;height:40px;width:auto}
   .stage{position:fixed;inset:0;z-index:10;display:grid;place-items:center;background:#061426e6;backdrop-filter:blur(6px)}
-  .stage iframe{height:min(92vh,880px);aspect-ratio:390/844;border:0;border-radius:28px;background:#09162b;
+  .stage iframe{height:min(92vh,880px,92vw*4/3);aspect-ratio:3/4;border:0;border-radius:28px;background:#09162b;
     box-shadow:0 0 0 10px #0a1a2e,0 0 0 12px #2a4d6e,0 30px 80px #000c}
   .close{position:absolute;top:16px;right:20px;width:44px;height:44px;border-radius:50%;border:1px solid #91b7d077;
     background:#12344e;color:#fff;font:400 26px/1 Arial,sans-serif;cursor:pointer}
@@ -66,7 +66,8 @@
   const stage=document.getElementById('stage'),frame=stage.querySelector('iframe'),close=stage.querySelector('.close');
   for(const mode of document.querySelectorAll('a.mode'))mode.addEventListener('click',event=>{
     if(!desktop.matches)return;
-    event.preventDefault();frame.src=mode.getAttribute('href');stage.hidden=false;
+    event.preventDefault();stage.hidden=false;
+    const url=new URL(mode.href);url.searchParams.set('controls','buttons');frame.src=url.href;
     // The game takes the keyboard; Escape inside it (same origin) closes the frame too.
     frame.addEventListener('load',()=>{frame.focus();frame.contentWindow.addEventListener('keydown',escape);},{once:true});
   });
