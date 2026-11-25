@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import TermsPage from "./pages/TermsPage";
+import SuperstarHockeyTermsPage from "./pages/SuperstarHockeyTermsPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import FaqPage from "./pages/FaqPage";
 import DeleteAccountHockeyPage from "./pages/DeleteAccountHockeyPage";
@@ -11,6 +12,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/terms" element={<TermsPage />} />
+      <Route path="/superstar-hockey-terms" element={<SuperstarHockeyTermsPage />} />
       <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/privacy-policy" element={<PrivacyPage />} />
       <Route path="/faq" element={<FaqPage />} />

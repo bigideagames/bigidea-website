@@ -9,6 +9,7 @@ const dist = "dist";
 const publicDir = "public";
 const routes = [
   "terms",
+  "superstar-hockey-terms",
   "privacy",
   "faq",
   "delete-account-superstar-soccer",
